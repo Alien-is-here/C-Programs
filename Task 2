@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(void) {
+    int num_of_units;
+    printf("Number of Units : \n");
+    scanf("%d", &num_of_units);
+    //printf("Number of Units are = %d\n", num_of_units);
+    num_of_units = 500;
+    
+    if (num_of_units == 100)
+    printf("Electricity Bill (PKR) : 1800 \n");
+    
+    else if (num_of_units == 200)
+    printf("Electricity Bill (PKR) : 3600 \n");
+    
+    else if (num_of_units == 250)
+    printf("Electricity Bill (PKR) : 7500 \n");
+    
+    else if (num_of_units == 350)
+    printf("Electricity Bill (PKR) : 10500 \n");
+    
+    else if (num_of_units == 400)
+    printf("Electricity Bill (PKR) : 16000 \n");
+    
+    else if (num_of_units == 500)
+    printf("Electricity Bill (PKR) : 20000 \n");
+    
+    
+    else
+    printf("Electricity Bill (PKR) : 20000 \n");
+    
+    return 0;
+}
