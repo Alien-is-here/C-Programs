@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define k 6.67e-8
+
+
+int main(void) {
+    double mass1;
+    double mass2;
+    double distance;
+    double force;
+    
+    mass1= 43.567;
+    mass2 = 34.55;
+    distance = 8908900;
+
+    
+    printf("Enter Mass of Body 1 (grams) : \n");
+    scanf("%lf", &mass1);
+    
+    printf("Enter Mass of Body 2 (grams): \n");
+    scanf("%lf", &mass2);
+    
+    printf("Enter Distance Between Bodies (cm): \n");
+    scanf("%lf", &distance);
+    
+    force = k * ((mass1 * mass2) / (distance * distance));
+    
+    printf("Force between the two bodies is : %.7e dyn" , force);
+    
+    return 0;
+}
