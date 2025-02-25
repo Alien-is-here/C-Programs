@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(void) {
+    int age;
+    int num_of_pizza;
+    char exercise_status;
+    
+   // age= 43;
+    //num_of_pizza = 1;
+    //exercise_status = 'N';
+    
+    
+    printf("Enter Age (In Years): \n");
+    scanf("%d", &age);    
+    
+    printf("Enter Numbers of Pizza Per Week: \n");
+    scanf("%d", &num_of_pizza);  
+    
+    printf("Enter Morning Exercise Status (Press Y for YES and N for No) : \n");
+    scanf(" %c", &exercise_status); 
+    
+    if ((num_of_pizza >=4) || (age>= 40   && exercise_status == 'N'))
+    printf("UNFIT\n");
+    
+    else 
+    printf("FIT\n");
+    
+    return 0;
+}
