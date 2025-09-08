@@ -1,0 +1,129 @@
+#include<stdio.h>
+
+int main() {
+    int classChoice;
+    int TicketArr[20] = {0};
+    
+    while(1) {
+    printf("\n===========================================================================================================\n");
+    printf("Welcome to Gen-Z Airlines\n");
+    printf("Enter Class for Booking Your Ticket.\nPress '1' for Business Class And Press '2' For Economy\n");
+    scanf("%d", &classChoice);
+    printf("\n");
+    printf("===========================================================================================================\n");
+    
+    int seatAssign = -1 ;
+    char choice;
+
+    while(seatAssign == -1) {
+    // For Business Class
+    if(classChoice == 1) {
+        for(int i =0 ; i< 10; i++) {
+            if (TicketArr[i] == 0) {
+                TicketArr[i] = 1;
+                seatAssign = i + 1;
+                break;
+            }
+        }  
+        if(seatAssign == -1){
+
+            int Eco_Full = 1;
+            for(int i = 10; i < 20; i++) {
+                if(TicketArr[i] == 0) {
+                    Eco_Full = 0;
+                    break;
+                }
+            }
+            if(Eco_Full) {
+                    printf("Both Business and Economy Are Full.");
+                    break;
+                }
+            
+            printf("Business Class is Full. Would you like to Book seat in Economy Class ?.\n Press 'Y' for YES and 'N' for NO.\n");
+            scanf(" %c", &choice);
+            if(choice == 'Y' || choice =='y')
+            {
+                classChoice = 2;
+            }
+            else {
+                printf("Thank You. Next Flight Will Leave in 4 hours\n");
+                break;
+            }
+        }
+    }
+    // For Economy Class 
+
+    else if(classChoice == 2) {
+        for(int i = 10 ; i< 20; i++) {
+            if (TicketArr[i] == 0) {
+                TicketArr[i] = 1;
+                seatAssign = i + 1;
+                break;
+            }
+        }  
+        if(seatAssign == -1){
+            int Bus_Full = 1;
+            for(int i = 0; i < 10; i++) {
+                if(TicketArr[i] == 0) {
+                    Bus_Full = 0;
+                    break;
+                }
+            }
+            if(Bus_Full) {
+                    printf("Both Economy and Business Are Full.");
+                    break;
+                }
+            
+
+            printf("Economy Class is Full. Would you like to Book seat in Business Class ?.\n Press 'Y' for YES and 'N' for NO.\n");
+            scanf(" %c", &choice);
+            if(choice == 'Y' || choice =='y')
+            {
+                classChoice = 1;
+            }
+            else {
+                printf("Thank You. Next Flight Will Leave in 4 hours\n");
+                break;
+            }
+        }
+    }
+    else {
+        printf("Invalid Choice");
+        break;
+    }
+}
+    // Ticket Details
+    if(seatAssign != -1) {
+        printf("\n");
+        printf("-------------------------------------Boarding Pass-------------------------------------------------\n");
+        printf("            Seat Number: %d", seatAssign);
+        if(seatAssign < 10) {
+            printf("\n            Class: Business Class");
+        }
+        else {
+            printf("\n            Class: Economy Class");
+        }
+    }
+    printf("\n----------------------------------------------------------------------------------------------------\n");
+    printf("\n");
+
+    // When All Seats Are Booked
+  int full = 1;
+  for(int i = 0; i < 20; i++) {
+    if(TicketArr[i] == 0) {
+        full = 0;
+        break;
+    }
+
+    else {
+        printf("All Seats Are Booked.  Next Flight Will Leave in 4 hours\n");
+        break;
+    }
+  
+} 
+  }
+
+  
+  return 0;
+    
+}
